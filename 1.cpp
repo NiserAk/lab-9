@@ -9,7 +9,7 @@ class node
   node*right;
   node(){parent=NULL;right=NULL;left=NULL;}
 };
-int n=1;
+int n=1,p=0;
 class bst
 {
   public:
@@ -185,10 +185,11 @@ void range_search(node*temp,int max,int min)
   if(temp==NULL) return;
   range_search(temp->right,max,min);
   if(temp->data>=min && temp->data<=max)
-    cout<<temp->data<<"   ";
+  {cout<<temp->data<<"   ";
+    ++P;}
   range_search(temp->left,max,min);
   }
-
+  cout<<endl<<"number of nodes : "<<p<<endl;
  
 };
 
